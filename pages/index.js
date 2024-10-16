@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Card, CardContent, CardHeader } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Alert, AlertDescription } from '../components/ui/alert';
 
 // Function to find similar blocks (simplified version)
 const findSimilarBlocks = (selectedBlock, allBlocks) => {
