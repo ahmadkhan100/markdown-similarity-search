@@ -71,8 +71,9 @@ const Home = () => {
       
       <Input type="file" onChange={handleFileChange} accept=".md" className="mb-4" />
       
-      {blocks.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
+        {/* Markdown Blocks Section */}
+        <div className="flex-1">
           <Card>
             <CardHeader>Markdown Blocks</CardHeader>
             <CardContent>
@@ -87,8 +88,11 @@ const Home = () => {
               ))}
             </CardContent>
           </Card>
-          
-          {selectedBlock && (
+        </div>
+        
+        {/* Analysis Results Section */}
+        {selectedBlock && (
+          <div className="flex-1">
             <Card>
               <CardHeader>Analysis Results</CardHeader>
               <CardContent>
@@ -118,9 +122,9 @@ const Home = () => {
                 )}
               </CardContent>
             </Card>
-          )}
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
