@@ -67,21 +67,21 @@ const Home = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Markdown Similarity Search</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">Markdown Similarity Search</h1>
       
       <Input type="file" onChange={handleFileChange} accept=".md" className="mb-4" />
       
-      <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex flex-col md:flex-row gap-6">
         {/* Markdown Blocks Section */}
         <div className="flex-1">
           <Card>
-            <CardHeader>Markdown Blocks</CardHeader>
+            <CardHeader className="text-lg font-semibold">Markdown Blocks</CardHeader>
             <CardContent>
               {blocks.map((block, index) => (
                 <Button 
                   key={index} 
                   onClick={() => handleBlockClick(block)}
-                  className="mb-2 w-full text-left"
+                  className="mb-2 w-full text-left hover:bg-gray-100 transition duration-200"
                 >
                   {block.substring(0, 50)}...
                 </Button>
@@ -94,7 +94,7 @@ const Home = () => {
         {selectedBlock && (
           <div className="flex-1">
             <Card>
-              <CardHeader>Analysis Results</CardHeader>
+              <CardHeader className="text-lg font-semibold">Analysis Results</CardHeader>
               <CardContent>
                 <h3 className="font-bold mb-2">Selected Block:</h3>
                 <p className="mb-4">{selectedBlock}</p>
@@ -108,7 +108,7 @@ const Home = () => {
                 
                 <h3 className="font-bold mb-2 mt-4">Wikipedia Results:</h3>
                 {isLoading ? (
-                  <p>Loading...</p>
+                  <p className="text-gray-500">Loading...</p>
                 ) : webResults.length > 0 ? (
                   webResults.map((result, index) => (
                     <Alert key={index} className="mb-2">
@@ -118,7 +118,7 @@ const Home = () => {
                     </Alert>
                   ))
                 ) : (
-                  <p>No results found</p>
+                  <p className="text-gray-500">No results found</p>
                 )}
               </CardContent>
             </Card>
